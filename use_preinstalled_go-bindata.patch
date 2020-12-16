@@ -1,0 +1,16 @@
+diff --git a/build/assets.sh b/build/assets.sh
+index fe51acd..9fa77ce 100644
+--- a/build/assets.sh
++++ b/build/assets.sh
+@@ -28,11 +28,6 @@ TEMPLATES_PACKAGE="pages"
+ 
+ FORCE="${FORCE:-}" # Force assets to be rebuilt if FORCE=true
+ 
+-# Install while in a temp dir to avoid polluting go.mod/go.sum
+-pushd "${TMPDIR:-/tmp}" > /dev/null
+-go get -u github.com/kevinburke/go-bindata/...
+-popd > /dev/null
+-
+ build_asset () {
+   local package=$1
+   local output_path=$2
