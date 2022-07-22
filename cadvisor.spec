@@ -2,7 +2,7 @@
 
 Name:    cadvisor
 Version: 0.37.0
-Release: 1
+Release: 2
 Summary: Analyzes resource usage and performance characteristics of running containers.
 License: ASL 2.0
 URL:     https://github.com/google/cadvisor
@@ -12,7 +12,6 @@ Source1: vendor.tar.gz
 Patch0:  use_preinstalled_go-bindata.patch
 
 BuildRequires: golang >= 1.13
-BuildRequires: go-bindata
 
 Conflicts: cadvisor
 Provides:  %{name} = %{version}
@@ -44,5 +43,8 @@ install -D -m 755 cadvisor %{buildroot}%{_bindir}/cadvisor
 
 
 %changelog
+* Fri Jul 22 2022 wo_cow <niuqianqian@huawei.com> - 0.37.0-2
+- Fix build err: nothing provides go-bindata
+
 * Tue Dec 15 2020 yangzhao <yangzhao1@kylinos.cn> - 0.37.0-1
 - Init project cadvisor
